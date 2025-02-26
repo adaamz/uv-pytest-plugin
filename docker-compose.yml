@@ -1,0 +1,9 @@
+services:
+  test:
+    image: uv-pytest-plugin
+    build: .
+    command: "pytest --env-config=some_file.yml"
+    volumes:
+      - ./src:/opt/app/my-app/src
+      - ./tests:/opt/app/my-app/tests
+      - ./pyproject.toml:/opt/app/my-app/pyproject.toml
